@@ -81,3 +81,6 @@ curl -X POST http://localhost:8080/api/users \
   -H "Content-Type: application/json" \
   -d '{"name":"새사용자", "email":"new@example.com", "phone":"010-0000-0000"}'
 ```
+- 상세 API 예시 : src/main/resources/API-RUN.md 참조.
+- 
+
