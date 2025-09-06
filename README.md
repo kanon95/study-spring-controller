@@ -19,7 +19,7 @@ MVC controller vs. REST controller
 │   │   │               ├── controller/
 │   │   │               │   └── UserController.java
 │   │   │               ├── model/
-│   │   │               │   └── User.java
+│   │   │               │   └── User.java[README.md](README.md)
 │   │   │               ├── repository/
 │   │   │               │   └── UserRepository.java
 │   │   │               └── service/
