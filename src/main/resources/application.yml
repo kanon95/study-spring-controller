@@ -7,10 +7,21 @@ spring:
 
   # H2 데이터베이스 설정
   datasource:
-    url: jdbc:h2:mem:testdb
+    # TCP 서버 연결 설정 (DBeaver 접근용)
+    url: jdbc:h2:tcp://localhost:9092/mem:testdb;MODE=MySQL;DATABASE_TO_UPPER=false
+    #url: jdbc:h2:tcp://localhost:9092/~/testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
-    password: 
+    password:
+
+  # H2 콘솔 활성화 (브라우저 접근용)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+        trace: false
 
   # JPA 설정
   jpa:
@@ -31,14 +42,12 @@ spring:
   # Hibernate 초기화 후 data.sql 실행
   defer-datasource-initialization: true
 
-  # H2 콘솔 활성화
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-
 # 로깅 설정
 logging:
   level:
+    root: INFO
     com.example.springrest: DEBUG
-    org.springframework.web: DEBUG
+    org.springframework.web: INFO
+    org.springframework.boot.autoconfigure: INFO
+    org.h2: DEBUG
+
